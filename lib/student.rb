@@ -8,6 +8,9 @@ class Student
   end
   
   def self.create_table 
-    
+    sql = <<-SQL
+    CREATE TABLE Students
+    SQL
+    DB[:conn].execute(sql)
   end
 end

@@ -31,13 +31,9 @@ class Student
   end
   
   def self.create(name:, grade:) 
-    sql = <<-SQL 
-    INSERT INTO students (name, grade) VALUES (?, ?)
-    SQL
-    student = DB[:conn].execute(sql, "name", "grade")
-    binding.pry
-    student.save 
-    student
+   student = Student.new(name, grade)
+   student.save 
+   student
   end
   
 end

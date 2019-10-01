@@ -34,7 +34,7 @@ class Student
     sql = <<-SQL 
     INSERT INTO students (name, grade) VALUES (?, ?)
     SQL
-    student = DB[:conn].execute(sql, name, grade)
+    student = DB[:conn].execute(sql, "name", "grade")
     binding.pry
     student.save 
     student
